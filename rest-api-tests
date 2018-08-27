@@ -1,0 +1,2 @@
+dbash
+yarn run rest-api-test:all

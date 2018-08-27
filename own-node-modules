@@ -1,0 +1,1 @@
+sudo chown -R daniel:daniel -- node_modules **/node_modules **/**/node_modules

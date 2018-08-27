@@ -1,0 +1,9 @@
+set -e
+git stash
+git pull
+docker-compose build --pull
+source docker-helper.sh
+dyarn install 
+docker-compose up -d --remove-orphans --force-recreate
+GYP_DEFINES="couchbase_root=/usr/local" yarn install
+git stash pop

@@ -1,0 +1,1 @@
+echo secret | xvnc4viewer localhost:5901

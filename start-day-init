@@ -1,0 +1,9 @@
+set -e
+#vault token renew$
+git stash
+git pull
+source docker-helper.sh && docker-init-rplan
+dyarn install
+GYP_DEFINES="couchbase_root=/usr/local" yarn install
+docker-compose up -d --remove-orphans --force-recreate
+git stash pop
