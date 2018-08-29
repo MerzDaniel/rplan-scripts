@@ -1,1 +1,1 @@
-for f in *; do ln $(pwd)/$f ../rplan/scripts/  ; done
+ln -s $(pwd) ../rplan/scripts
