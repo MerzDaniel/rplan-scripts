@@ -1,9 +1,16 @@
+# start-day 
+
+# quit on error
 set -e
-git stash
+
+git_has_changes=`git ls-files -m`
+if [ -n "$git_has_changes" ]; then git stash ; fi
+
 git pull
 docker-compose build --pull
 source docker-helper.sh
 dyarn install 
 docker-compose up -d --remove-orphans --force-recreate
 GYP_DEFINES="couchbase_root=/usr/local" yarn install
-git stash pop
+
+if [ -n "$git_has_changes" ]; then git stash pop ; fi
