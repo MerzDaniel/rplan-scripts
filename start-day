@@ -7,10 +7,10 @@ git_has_changes=`git ls-files -m`
 if [ -n "$git_has_changes" ]; then git stash ; fi
 
 git pull
+GYP_DEFINES="couchbase_root=/usr/local" yarn install
 docker-compose build --pull
 source docker-helper.sh
 dyarn install 
 docker-compose up -d --remove-orphans --force-recreate
-GYP_DEFINES="couchbase_root=/usr/local" yarn install
 
 if [ -n "$git_has_changes" ]; then git stash pop ; fi
