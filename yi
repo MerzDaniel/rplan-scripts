@@ -1,8 +1,11 @@
 GYP_DEFINES="couchbase_root=/usr/local"
 PATH="/usr/local/opt/node@8/bin:$PATH"
-# first deps in docker -> correct "old" node version
+
+echo "Local dep installation"
+sudo chown -R daniel:daniel -- node_modules **/node_modules **/**/node_modules
 GYP_DEFINES="couchbase_root=/usr/local" yarn install
+# deps in docker -> correct "old" node version
+
+echo "Docker dependencies installation"
 source docker-helper.sh
 dyarn install
-sudo chown -R daniel:daniel -- node_modules **/node_modules **/**/node_modules
-# then local
