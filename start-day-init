@@ -8,7 +8,6 @@ if [ -n "$git_has_changes" ]; then git stash ; fi
 
 git pull
 source docker-helper.sh && docker-init-rplan
-dyarn install
 docker-compose up -d --remove-orphans --force-recreate
 GYP_DEFINES="couchbase_root=/usr/local" yarn install
 
