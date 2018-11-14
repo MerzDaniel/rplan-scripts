@@ -13,7 +13,7 @@ git pull
 # bash $SCRIPT_DIR/yi-local &
 
 docker-compose build --pull
-. docker-helper
+
 dyarn install 
 docker-compose up -d --remove-orphans --force-recreate
 
