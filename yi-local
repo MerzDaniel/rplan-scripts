@@ -1,3 +1,4 @@
+# yi-local
 PATH="/usr/local/opt/node@8/bin:$PATH"
 sudo chown -R daniel:daniel -- node_modules **/node_modules **/**/node_modules flow-typed build build
 GYP_DEFINES="couchbase_root=/usr/local" yarn install
