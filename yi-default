@@ -1,3 +1,4 @@
+# yi-default
 GYP_DEFINES="couchbase_root=/usr/local"
 PATH="/usr/local/opt/node@8/bin:$PATH"
 
