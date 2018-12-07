@@ -1,5 +1,8 @@
-. ./docker-helper.sh
-. ./local.env
+# j source script for rplan
+
+. docker-helper
+. local.env
+
 # rplan
 alias dir="docker-init-rplan"
 alias w=". ./tools/webpack_notifier"
@@ -8,11 +11,12 @@ alias w=". ./tools/webpack_notifier"
 alias dlr="docker-compose logs rplan"
 alias dlf="docker-compose logs -f rplan"
 alias dc="docker-compose"
-alias du="docker-compose up -d --force-recreate"
+alias du="docker-compose up -d --force-recreate --remove-orphans"
 alias dur="docker-compose up -d --force-recreate rplan"
 alias duw="docker-compose up -d --force-recreate webpack"
-alias dd="docker-compose down -v"
+alias dd="docker-compose down -v --remove-orphans"
 alias dcp="docker-compose ps"
+alias drr="docker-compose restart rplan"
 # docker
 alias dp="docker ps"
 alias dsp="docker system prune"

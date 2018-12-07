@@ -1,14 +1,21 @@
 # start-day-init
+
 # git pull, init-docker, install deps, startup docker
-set -e
+# set -e
 #vault token renew$
 
 git_has_changes=`git ls-files -m`
 if [ -n "$git_has_changes" ]; then git stash ; fi
 
 git pull
-source docker-helper.sh && docker-init-rplan
-docker-compose up -d --remove-orphans --force-recreate
-GYP_DEFINES="couchbase_root=/usr/local" yarn install
+
+. j
+dd
+dsp
+
+docker-init-rplan
+
+own-node-modules
+yarn install
 
 if [ -n "$git_has_changes" ]; then git stash pop ; fi
